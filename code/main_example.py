@@ -1,4 +1,4 @@
-#AI Usage Statement: AI was used to help Debug code and increase efficiency
+#AI Usage Statement: AI was used to help debug and increase efficiency
 
 from termcolor import colored
 import cv2
