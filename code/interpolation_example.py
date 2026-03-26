@@ -84,7 +84,7 @@ y_value = a1 + a2 * x_value + a3 * x_value**2
 print("At x = 4, y =", y_value)
 
 # Plot the parabola
-plt.plot(x, y, label='y = 0.375 + 0.5x + 0.125x²')
+plt.plot(x, y, label=f'y = {a1} + {a2}x + {a3}x²')
 
 # Plot the specific point (in red)
 plt.scatter(x_value, y_value, color='red', zorder=5, label=f'Interpolated Point (x={x_value}, y={y_value:.2f})')
