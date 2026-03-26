@@ -16,38 +16,37 @@ start_time = time.time()
 
 filenames = [
     r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
-    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
-    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
-    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
-    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
-    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
-    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
-    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
-    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
-    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
-    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
+    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010030.jpg",
+    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010051.jpg",
+    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010024.jpg",
+    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Slobe ch010158.jpg",
+    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010067.jpg",
+    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010164.jpg",
+    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010174.jpg",
+    r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Slobe ch010134.jpg",
 ]
 
 
-depths = [30, 200, 330, 400, 600, 750, 920, 1500, 2200, 3100, 4500]
+depths = [30, 200, 400, 600, 920, 1500, 2200, 3100, 4500]
 
 white_percents = []
 
 print(colored("Counts of pixel color in each image", "yellow"))
 
 for filename, depth in zip(filenames, depths):
+    print(filename)
     img = cv2.imread(filename, 0)
 
-    if img is None:
-        print(f"Error loading image: {filename}")
-        continue
+    #if img is None:
+     #   print(f"Error loading image: {filename}")
+      #  continue
 
     # Threshold
     _, binary = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
 
     # Count pixels efficiently
     white = np.count_nonzero(binary == 255)
-    total = binary.size
+    total = len(binary)
     black = total - white
 
     # Compute percent
@@ -75,7 +74,6 @@ print("\nThe .csv file 'Percent_White_Pixels.csv' has been created.")
 
 end_time = time.time()
 print(f"\nExecution time: {end_time - start_time:.4f} seconds")
-
 
 
 # LECTURE 2: UNCOMMENT BELOW
