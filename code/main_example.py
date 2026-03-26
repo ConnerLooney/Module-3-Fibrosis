@@ -12,12 +12,17 @@ start_time = time.time()
 
 
 filenames = [
-    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010017.jpg",
-    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010018.jpg",
-    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010019.jpg",
     r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010021.jpg",
-    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010022.jpg",
-    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010023.jpg",
+    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010030.jpg",
+    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010156.jpg",
+    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010051.jpg",
+    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010024.jpg",
+    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010157.jpg",
+    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010158.jpg",
+    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010067.jpg",
+    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010164.jpg",
+    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010174.jpg",
+    r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010134.jpg",
 ]
 
 """
@@ -30,7 +35,7 @@ filenames = [
     r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010023.jpg",
 ]
 """
-depths = [45, 90, 60, 30, 80, 100]
+depths = [30, 200, 330, 400, 600, 750, 920, 1500, 2200, 3100, 4500]
 
 white_percents = []
 
@@ -77,7 +82,7 @@ print("\nThe .csv file 'Percent_White_Pixels.csv' has been created.")
 end_time = time.time()
 print(f"\nExecution time: {end_time - start_time:.4f} seconds")
 
-
+"""
 ##############
 # LECTURE 2: UNCOMMENT BELOW
 
@@ -90,7 +95,7 @@ x = depths
 y = white_percents
 
  # You can also use 'quadratic', 'cubic', etc.
-i = interp1d(x, y, kind='linear')
+i = interp1d(x, y, kind='quadratic')
 interpolate_point = i(interpolate_depth)
 print(colored(
     f'The interpolated point is at the x-coordinate {interpolate_depth} and y-coordinate {interpolate_point}.', "green"))
@@ -125,3 +130,4 @@ axs[1].scatter(depths_i[len(depths_i)-1], white_percents_i[len(white_percents_i)
 # # Adjust layout to prevent overlap
 plt.tight_layout()
 plt.show()
+"""
