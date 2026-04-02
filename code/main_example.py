@@ -10,10 +10,17 @@ import time
 
 start_time = time.time()
 
-
-
-
-
+filenames = [r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010021.jpg",
+             r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010030.jpg",
+             r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010051.jpg",
+             r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010024.jpg",
+             r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Slobe ch010158.jpg",
+             r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010067.jpg",
+             r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010164.jpg",
+             r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Llobe ch010174.jpg",
+             r"C:\Users\Jmarc\Desktop\Comp BME\module-2-jackmarchesi\Module-3-Fibrosis\images\MASK_Sk658 Slobe ch010134.jpg",
+             ]
+""""
 filenames = [
     r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010021.jpg",
     r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010030.jpg",
@@ -25,7 +32,7 @@ filenames = [
     r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Llobe ch010174.jpg",
     r"/Users/connerlooney/Documents/GitHub/Module-3-Fibrosis/images/MASK_Sk658 Slobe ch010134.jpg",
 ]
-
+"""
 
 depths = [30, 200, 400, 600, 920, 1500, 2200, 3100, 4500]
 
@@ -46,7 +53,7 @@ for filename, depth in zip(filenames, depths):
 
     # Count pixels efficiently
     white = np.count_nonzero(binary == 255)
-    total = len(binary)
+    total = binary.size
     black = total - white
 
     # Compute percent
